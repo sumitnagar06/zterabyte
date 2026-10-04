@@ -25,11 +25,11 @@ const plans = {
     {
       name: "Business",
       description: "Ideal for businesses that need more websites, resources and professional hosting.",
-      price: "₹319",
-      salePrice: "₹208",
+      price: "₹4000",
+      salePrice: "₹3200",
       saleActive: true,
-      period: "/month",
-      billing: "Monthly",
+      period: "/year",
+      billing: "Yearly",
       popular: false,
       features: [
         {
@@ -72,11 +72,11 @@ const plans = {
     {
       name: "Professional",
       description: "A powerful hosting solution for growing businesses and high-traffic websites.",
-      price: "₹707",
-      salePrice: "₹363",
+      price: "₹8800",
+      salePrice: "₹7000",
       saleActive: true,
-      period: "/month",
-      billing: "Monthly",
+      period: "/year",
+      billing: "Yearly",
       popular: true,
       features: [
         {
@@ -120,11 +120,11 @@ const plans = {
       name: "Enterprise",
       description:
         "Designed for established businesses requiring maximum resources and support.",
-      price: "₹848",
-      salePrice: "₹474",
+      price: "₹10600",
+      salePrice: "₹8400",
       saleActive: true,
-      period: "/month",
-      billing: "Monthly",
+      period: "/year",
+      billing: "Yearly",
       popular: false,
       features: [
         {
@@ -170,11 +170,11 @@ const plans = {
       name: "Business",
       description:
         "Ideal for businesses that need more websites, resources and professional hosting.",
-      price: "₹269",
-      salePrice: "₹208",
+      price: "₹3400",
+      salePrice: "₹2700",
       saleActive: true,
-      period: "/month",
-      billing: "Monthly",
+      period: "/year",
+      billing: "Yearly",
       popular: false,
       features: [
         {
@@ -217,11 +217,11 @@ const plans = {
     {
       name: "Professional",
       description: "A powerful hosting solution for growing businesses and high-traffic websites.",
-      price: "₹678",
-      salePrice: "₹363",
+      price: "₹8500",
+      salePrice: "₹6800",
       saleActive: true,
-      period: "/month",
-      billing: "Monthly",
+      period: "/year",
+      billing: "Yearly",
       popular: true,
       features: [
         {
@@ -264,11 +264,11 @@ const plans = {
     {
       name: "Enterprise",
       description: "Designed for established businesses requiring maximum resources and support.",
-      price: "₹820",
-      salePrice: "₹474",
+      price: "₹10300",
+      salePrice: "₹8200",
       saleActive: true,
-      period: "/month",
-      billing: "Monthly",
+      period: "/year",
+      billing: "Yearly",
       popular: false,
       features: [
         {
