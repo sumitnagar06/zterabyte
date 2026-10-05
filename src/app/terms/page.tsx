@@ -14,6 +14,7 @@ import {
 } from "react-icons/fi";
 
 export const metadata = {
+  alternates: { canonical: '/terms' },
   title: "Terms & Conditions | Zterabyte",
   description:
     "Read the Terms & Conditions governing the use of the Zterabyte website and our domain, hosting, email, website development, design and digital marketing services.",

@@ -4,6 +4,10 @@ import EcommerceSEOProcess from "@/components/digital-marketing/EcommerceSEOProc
 import EcommerceSEOResults from "@/components/digital-marketing/EcommerceSEOResults";
 import EcommerceSEOCTA from "@/components/digital-marketing/EcommerceSEOCTA";
 
+export const metadata = {
+  alternates: { canonical: '/digital-marketing/ecommerce-seo' },
+};
+
 export default function EcommerceSEOPage() {
   return (
     <main className="w-full overflow-x-hidden bg-white">

@@ -15,6 +15,7 @@ import {
 } from "react-icons/fi";
 
 export const metadata = {
+  alternates: { canonical: '/refund-cancellation' },
   title: "Refund & Cancellation Policy | Zterabyte",
   description:
     "Read Zterabyte's Refund & Cancellation Policy covering website development, hosting, domain, email hosting, design and digital marketing services.",

@@ -21,7 +21,7 @@ const emailPlans = [
       "Spam protection",
       "Technical support",
     ],
-    href: "/email-hosting/business",
+    href: "/email-hosting/business-email-hosting",
   },
   {
     title: "Enterprise Email Hosting",
@@ -36,7 +36,7 @@ const emailPlans = [
       "Enhanced security",
       "Dedicated support",
     ],
-    href: "/email-hosting/enterprise",
+    href: "/email-hosting/enterprise-email-hosting",
   },
 ];
 

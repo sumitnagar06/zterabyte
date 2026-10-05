@@ -15,6 +15,10 @@ const features = [
   "Easy future expansion",
 ];
 
+export const metadata = {
+  alternates: { canonical: '/website-development/web-development' },
+};
+
 export default function WebDevelopmentPage() {
   return (
     <main className="bg-white">

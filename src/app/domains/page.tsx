@@ -10,6 +10,7 @@ import DomainSecurity from "@/components/domain/DomainSecurity";
 import DomainCTA from "@/components/domain/DomainCTA";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/domains' },
   title: "Cheap Domain Registration in Kota | Buy Domain Name - ZTERABYTE",
   description:
     "Register your domain name with ZTERABYTE. Find and manage .com, .in, .net, .org and other domain extensions with reliable domain services in Kota.",

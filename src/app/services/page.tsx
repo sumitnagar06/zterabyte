@@ -95,6 +95,10 @@ const serviceGroups = [
   },
 ];
 
+export const metadata = {
+  alternates: { canonical: '/services' },
+};
+
 export default function ServicesPage() {
   return (
     <main>

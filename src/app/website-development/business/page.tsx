@@ -1,3 +1,7 @@
+export const metadata = {
+  alternates: { canonical: '/website-development/business' },
+};
+
 export default function BusinessWebsitePage() {
   return (
     <main className="min-h-screen bg-[#f6fafd]">

@@ -1,3 +1,7 @@
+export const metadata = {
+  alternates: { canonical: '/website-development/responsive' },
+};
+
 export default function ResponsiveDevelopmentPage() {
   return (
     <main className="min-h-screen bg-[#f6fafd]">

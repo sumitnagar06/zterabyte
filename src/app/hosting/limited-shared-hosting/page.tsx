@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import LimitedHostingHero from "@/components/hosting/LimitedHostingHero";
 import LimitedHostingPlans from "@/components/hosting/LimitedHostingPlans";
-import StatsCounter from "@/components/common/StatsCounter";
+import LimitedHostingSpecifications from "@/components/hosting/LimitedHostingSpecifications";
+// import StatsCounter from "@/components/common/StatsCounter";
 import FAQ from "@/components/common/FAQ";
 import { hostingFAQ } from "@/components/common/hostingFAQ";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/hosting/limited-shared-hosting' },
   title: "Limited Web Hosting Services in Kota | Fast & Reliable Hosting - ZTERABYTE",
   description:
     "Get reliable limited web hosting services with fast performance, SSL, business email and flexible hosting plans for your website from ZTERABYTE.",
@@ -49,7 +51,10 @@ export default function LimitedHostingPage() {
       <LimitedHostingPlans />
 
       {/* Hosting Statistics */}
-      <StatsCounter items={limitedHostingStats} />
+      {/* <StatsCounter items={limitedHostingStats} /> */}
+
+      {/* Hosting Technical Specifications */}
+      <LimitedHostingSpecifications />
 
       {/* FAQ */}
       <FAQ

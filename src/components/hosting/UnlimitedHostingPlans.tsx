@@ -121,7 +121,7 @@ const plans = {
       description:
         "Designed for established businesses requiring maximum resources and support.",
       price: "₹10600",
-      salePrice: "₹8400",
+      salePrice: "₹8500",
       saleActive: true,
       period: "/year",
       billing: "Yearly",
@@ -171,7 +171,7 @@ const plans = {
       description:
         "Ideal for businesses that need more websites, resources and professional hosting.",
       price: "₹3400",
-      salePrice: "₹2700",
+      salePrice: "₹2720",
       saleActive: true,
       period: "/year",
       billing: "Yearly",
@@ -415,6 +415,14 @@ export default function UnlimitedHostingPlans() {
             const finalPrice = plan.saleActive
               ? plan.salePrice
               : plan.price;
+            const discountPercentage = plan.saleActive
+              ? Math.round(
+                  ((Number(plan.price.replace(/[^\d]/g, "")) -
+                    Number(plan.salePrice.replace(/[^\d]/g, ""))) /
+                    Number(plan.price.replace(/[^\d]/g, ""))) *
+                    100
+                )
+              : 0;
 
             return (
               <div
@@ -447,7 +455,7 @@ export default function UnlimitedHostingPlans() {
                 <div className="mt-5 h-6">
                   {plan.saleActive && (
                     <span className="inline-flex rounded-full bg-red-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-600">
-                      Sale
+                      Sale · {discountPercentage}% Off
                     </span>
                   )}
                 </div>

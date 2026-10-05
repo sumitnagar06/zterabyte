@@ -4,6 +4,10 @@ import EmailMarketingProcess from "@/components/digital-marketing/EmailMarketing
 import EmailMarketingResults from "@/components/digital-marketing/EmailMarketingResults";
 import EmailMarketingCTA from "@/components/digital-marketing/EmailMarketingCTA";
 
+export const metadata = {
+  alternates: { canonical: '/digital-marketing/email-marketing' },
+};
+
 export default function EmailMarketingPage() {
   return (
     <main className="w-full overflow-x-hidden bg-white">

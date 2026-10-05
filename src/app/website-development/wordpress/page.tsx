@@ -24,6 +24,10 @@ const highlights = [
   "Easy content management",
 ];
 
+export const metadata = {
+  alternates: { canonical: '/website-development/wordpress' },
+};
+
 export default function WordPressPage() {
   return (
     <main className="w-full overflow-x-hidden bg-white">

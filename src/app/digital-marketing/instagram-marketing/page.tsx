@@ -4,6 +4,10 @@ import InstagramMarketingProcess from "@/components/digital-marketing/InstagramM
 import InstagramMarketingResults from "@/components/digital-marketing/InstagramMarketingResults";
 import InstagramMarketingCTA from "@/components/digital-marketing/InstagramMarketingCTA";
 
+export const metadata = {
+  alternates: { canonical: '/digital-marketing/instagram-marketing' },
+};
+
 export default function InstagramMarketingPage() {
   return (
     <main className="w-full overflow-x-hidden bg-white">

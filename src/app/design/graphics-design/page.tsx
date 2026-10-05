@@ -4,6 +4,10 @@ import GraphicsDesignProcess from "@/components/design/GraphicsDesignProcess";
 import GraphicsDesignServices from "@/components/design/GraphicsDesignServices";
 import GraphicsDesignCTA from "@/components/design/GraphicsDesignCTA";
 
+export const metadata = {
+  alternates: { canonical: '/design/graphics-design' },
+};
+
 export default function GraphicsDesignPage() {
   return (
     <main className="w-full overflow-x-hidden bg-white">

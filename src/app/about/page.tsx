@@ -17,6 +17,7 @@ import {
 } from "react-icons/fi";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/about' },
   title: "About ZTERABYTE | Digital Services in Kota - ZTERABYTE",
   description:
     "Register your domain name with ZTERABYTE. Find and manage .com, .in, .net, .org and other domain extensions with reliable domain services in Kota.",

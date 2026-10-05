@@ -2,6 +2,7 @@ import ClientCard from "@/components/clients/ClientCard";
 import { clients } from "@/data/clients";
 
 export const metadata = {
+  alternates: { canonical: '/our-client' },
   title: "Our Clients | ZTERABYTE",
   description:
     "Explore the businesses and organizations that have trusted ZTERABYTE for hosting, website development, design, email and digital marketing services.",

@@ -4,6 +4,10 @@ import FacebookMarketingProcess from "@/components/digital-marketing/FacebookMar
 import FacebookMarketingResults from "@/components/digital-marketing/FacebookMarketingResults";
 import FacebookMarketingCTA from "@/components/digital-marketing/FacebookMarketingCTA";
 
+export const metadata = {
+  alternates: { canonical: '/digital-marketing/facebook-marketing' },
+};
+
 export default function FacebookMarketingPage() {
   return (
     <main className="w-full overflow-x-hidden bg-white">

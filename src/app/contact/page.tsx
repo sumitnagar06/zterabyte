@@ -6,6 +6,7 @@ import ExpertSupport from "@/components/contact/ExpertSupport";
 import ContactNewsletter from "@/components/contact/ContactNewsletter";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/contact' },
   title: "Contact ZTERABYTE | Website & Digital Marketing Services",
   description:
     "Contact ZTERABYTE for domain registration, hosting, website development, email hosting and digital marketing services.",

@@ -196,7 +196,7 @@ export default function EnterpriseEmailPlans() {
           PRICING CONFIGURATOR
       ====================================================== */}
 
-      <section className="-mt-10 relative z-10 pb-16 sm:pb-20 lg:pb-24">
+      <section id="email-plans" className="-mt-10 relative z-10 pb-16 sm:pb-20 lg:pb-24">
 
         <div className="mx-auto max-w-7xl px-5 lg:px-6">
 

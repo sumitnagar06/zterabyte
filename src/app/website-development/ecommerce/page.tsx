@@ -23,6 +23,10 @@ const benefits = [
   "Order Management",
 ];
 
+export const metadata = {
+  alternates: { canonical: '/website-development/ecommerce' },
+};
+
 export default function EcommerceWebsitePage() {
   return (
     <main className="w-full overflow-x-hidden bg-white">

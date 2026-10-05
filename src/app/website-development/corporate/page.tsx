@@ -1,3 +1,7 @@
+export const metadata = {
+  alternates: { canonical: '/website-development/corporate' },
+};
+
 export default function CorporateWebsitePage() {
   return (
     <main className="min-h-screen bg-[#f6fafd]">

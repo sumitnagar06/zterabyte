@@ -23,6 +23,10 @@ const highlights = [
   "Payment and order management",
 ];
 
+export const metadata = {
+  alternates: { canonical: '/website-development/shopify' },
+};
+
 export default function ShopifyPage() {
   return (
     <main className="w-full overflow-x-hidden bg-white">

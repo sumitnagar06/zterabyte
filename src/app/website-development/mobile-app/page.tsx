@@ -23,6 +23,10 @@ const highlights = [
   "Responsive and performance-oriented apps",
 ];
 
+export const metadata = {
+  alternates: { canonical: '/website-development/mobile-app' },
+};
+
 export default function MobileAppPage() {
   return (
     <main className="w-full overflow-x-hidden bg-white">

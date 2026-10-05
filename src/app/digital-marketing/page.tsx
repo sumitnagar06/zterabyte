@@ -7,6 +7,7 @@ import DigitalMarketingResults from "@/components/digital-marketing/DigitalMarke
 import DigitalMarketingCTA from "@/components/digital-marketing/DigitalMarketingCTA";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/digital-marketing' },
   title: "Digital Marketing Company in Kota | SEO Services - ZTERABYTE",
   description:
     "Grow your business online with SEO, social media and digital marketing services from ZTERABYTE. Get more visibility and reach potential customers.",

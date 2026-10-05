@@ -26,19 +26,23 @@ const services = [
   },
   {
     title: "Limited Shared Hosting",
-    href: "/hosting/limited",
+    href: "/hosting/limited-shared-hosting",
   },
   {
      title: "Unlimited Shared Hosting",
-     href: "/hosting/unlimited",
+     href: "/hosting/unlimited-shared-hosting",
+  },
+  {
+    title: "WordPress Hosting",
+    href: "/hosting/wordpress-hosting",
   },
   {
     title: "Business Email Hosting",
-    href: "/email-hosting/business",
+    href: "/email-hosting/business-email-hosting",
   },
   {
     title: "Enterprise Email Hosting",
-    href: "/email-hosting/enterprise",
+    href: "/email-hosting/enterprise-email-hosting",
   },
 ];
 

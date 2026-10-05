@@ -84,14 +84,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     {
-      url: `${baseUrl}/hosting/limited`,
+      url: `${baseUrl}/hosting/limited-shared-hosting`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
 
     {
-      url: `${baseUrl}/hosting/unlimited`,
+      url: `${baseUrl}/hosting/unlimited-shared-hosting`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+
+    {
+      url: `${baseUrl}/hosting/wordpress-hosting`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
@@ -106,7 +113,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     {
-      url: `${baseUrl}/email-hosting/enterprise`,
+      url: `${baseUrl}/email-hosting/business-email-hosting`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+
+    {
+      url: `${baseUrl}/email-hosting/enterprise-email-hosting`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,

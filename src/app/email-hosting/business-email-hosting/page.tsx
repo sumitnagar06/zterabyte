@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import BusinessEmailPlans from "@/components/email/BusinessEmailPlans";
-import StatsCounter from "@/components/common/StatsCounter";
+import BusinessEmailWhyChoose from "@/components/email/BusinessEmailWhyChoose";
+// import StatsCounter from "@/components/common/StatsCounter";
 import FAQ from "@/components/common/FAQ";
 import { emailFAQ } from "@/components/common/emailFAQ";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/email-hosting/business-email-hosting' },
   title: "Business Email Hosting in Kota | Professional Email - ZTERABYTE",
   description:
     "Create professional business email accounts with reliable email hosting from ZTERABYTE. Suitable for businesses, teams and organizations.",
@@ -45,9 +47,12 @@ export default function BusinessEmailPage() {
       <BusinessEmailPlans />
 
       {/* Email Statistics */}
-      <StatsCounter
+      {/* <StatsCounter
         items={businessEmailStats}
-      />
+      /> */}
+
+      {/* Business Email Features */}
+      <BusinessEmailWhyChoose />
 
       {/* FAQ */}
       <FAQ

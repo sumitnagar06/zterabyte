@@ -7,6 +7,7 @@ import FAQ from "@/components/common/FAQ";
 import WebsiteDevelopmentCTA from "@/components/website/WebsiteDevelopmentCTA";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/website-development' },
   title: "Website Development Company in Kota | Web Design Services - ZTERABYTE",
   description:
     "ZTERABYTE provides professional website development and web design services in Kota for businesses, startups and organizations.",

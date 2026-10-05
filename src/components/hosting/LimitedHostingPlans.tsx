@@ -207,6 +207,14 @@ export default function LimitedHostingPlans() {
             const finalPrice = plan.saleActive
               ? plan.salePrice
               : plan.price;
+            const discountPercentage = plan.saleActive
+              ? Math.round(
+                  ((Number(plan.price.replace(/[^\d]/g, "")) -
+                    Number(plan.salePrice.replace(/[^\d]/g, ""))) /
+                    Number(plan.price.replace(/[^\d]/g, ""))) *
+                    100
+                )
+              : 0;
 
             return (
               <div
@@ -239,7 +247,7 @@ export default function LimitedHostingPlans() {
                 <div className="mt-5 h-6">
                   {plan.saleActive && (
                     <span className="inline-flex rounded-full bg-red-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-600">
-                      Sale
+                      Sale · {discountPercentage}% Off
                     </span>
                   )}
                 </div>

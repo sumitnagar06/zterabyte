@@ -1,3 +1,7 @@
+export const metadata = {
+  alternates: { canonical: '/website-development/custom-web-application' },
+};
+
 export default function CustomWebApplicationPage() {
   return (
     <main className="min-h-screen bg-[#f6fafd]">

@@ -11,6 +11,7 @@ import {
 } from "react-icons/fi";
 
 export const metadata = {
+  alternates: { canonical: '/privacy-policy' },
   title: "Privacy Policy | Zterabyte",
   description:
     "Read the Zterabyte Privacy Policy to understand how we collect, use, protect and manage information when you use our website and digital services.",

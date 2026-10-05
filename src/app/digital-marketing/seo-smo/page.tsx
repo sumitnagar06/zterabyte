@@ -6,6 +6,10 @@ import SEOAndSMOResults from "@/components/digital-marketing/SEOAndSMOResults";
 import SEOAndSMOCTA from "@/components/digital-marketing/SEOAndSMOCTA";
 
 
+export const metadata = {
+  alternates: { canonical: '/digital-marketing/seo-smo' },
+};
+
 export default function SEOAndSMOPage() {
   return (
     <main className="w-full overflow-x-hidden bg-white">

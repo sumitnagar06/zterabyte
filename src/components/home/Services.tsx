@@ -23,7 +23,7 @@ const services = [
     title: "Web Hosting",
     description:
       "Reliable and scalable hosting solutions designed to keep your websites fast, secure and available.",
-    href: "/hosting/limited",
+    href: "/hosting/limited-shared-hosting",
     tag: "Hosting",
   },
   {
@@ -31,7 +31,7 @@ const services = [
     title: "Email Hosting",
     description:
       "Professional business email solutions that help your company communicate with confidence.",
-    href: "/email-hosting/business",
+    href: "/email-hosting/business-email-hosting",
     tag: "Business Email",
   },
   {
