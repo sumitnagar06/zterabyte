@@ -852,9 +852,6 @@ Email: ${email}
 Phone: ${phone}
 Domain: ${domain || "Not provided"}
 
-Your message:
-${message}
-
 Regards,
 ZTERABYTE Team`,
         html: `<!DOCTYPE html>
@@ -872,7 +869,6 @@ ZTERABYTE Team`,
       ${features.length ? `<h2 style="margin:24px 0 8px;font-size:17px">Selected details</h2><ul style="margin:0;padding-left:20px;color:#475569;line-height:1.7">${features.map((feature: string) => `<li>${escapeHtml(feature)}</li>`).join("")}</ul>` : ""}
       <h2 style="margin:24px 0 8px;font-size:17px">Your submitted details</h2>
       <p style="margin:0;color:#475569;line-height:1.7"><strong>Name:</strong> ${safeName}<br/><strong>Company:</strong> ${safeCompany || "Not provided"}<br/><strong>Address:</strong> ${safeAddress || "Not provided"}<br/><strong>Email:</strong> ${safeEmail}<br/><strong>Phone:</strong> ${safePhone}<br/><strong>Domain:</strong> ${safeDomain || "Not provided"}</p>
-      <h2 style="margin:24px 0 8px;font-size:17px">Message</h2><p style="margin:0;padding:14px;background:#f7fafc;border-left:3px solid #006cb5;color:#475569;line-height:1.7;white-space:pre-wrap">${safeMessage}</p>
       <p style="margin:24px 0 0;color:#475569;line-height:1.6">Regards,<br/><strong>ZTERABYTE Team</strong></p>
     </td></tr>
   </table>
