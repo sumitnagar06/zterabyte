@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import DomainEnquiryModal from "@/components/domain/DomainEnquiryModal";
 
 const extensions = [
   {
@@ -262,6 +263,12 @@ export default function DomainSection() {
                     ? "✓ Domain Available"
                     : "✕ Already Registered"}
                 </p>
+
+                {result.available && (
+                  <div className="mt-4">
+                    <DomainEnquiryModal domain={result.domain} />
+                  </div>
+                )}
               </div>
             ))}
           </div>

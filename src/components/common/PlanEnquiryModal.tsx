@@ -6,6 +6,7 @@ import {
   FiCheckCircle,
   FiGlobe,
   FiMail,
+  FiMapPin,
   FiPhone,
   FiSend,
   FiUser,
@@ -36,6 +37,7 @@ export default function PlanEnquiryModal({
   const [formData, setFormData] = useState({
     name: "",
     company: "",
+    address: "",
     domain: "",
     phone: "",
     email: "",
@@ -178,6 +180,7 @@ Please provide me with more information about this plan.`
       body: JSON.stringify({
         name: formData.name,
         company: formData.company,
+        address: formData.address,
         domain: formData.domain,
         phone: formData.phone,
         email: formData.email,
@@ -485,6 +488,32 @@ Please provide me with more information about this plan.`
                 </div>
 
                 {/* =================================
+                    ADDRESS
+                ================================= */}
+                <div className="mt-5">
+                  <label
+                    htmlFor="plan-address"
+                    className="mb-2 block text-sm font-semibold text-[#071827]"
+                  >
+                    Complete Address with Pincode
+                  </label>
+
+                  <div className="relative">
+                    <FiMapPin className="absolute left-4 top-4 text-slate-400" />
+                    <textarea
+                      id="plan-address"
+                      name="address"
+                      rows={3}
+                      value={formData.address}
+                      onChange={handleChange}
+                      autoComplete="street-address"
+                      placeholder="Enter your address"
+                      className="w-full resize-y rounded-xl border border-slate-200 bg-slate-50 py-3.5 pl-11 pr-4 text-sm text-[#071827] outline-none transition placeholder:text-slate-400 focus:border-[#006cb5] focus:bg-white focus:ring-2 focus:ring-[#006cb5]/10"
+                    />
+                  </div>
+                </div>
+
+                {/* =================================
                     MESSAGE
                 ================================= */}
                 <div className="mt-5">
@@ -500,8 +529,9 @@ Please provide me with more information about this plan.`
                     name="message"
                     rows={5}
                     value={formData.message}
-                    onChange={handleChange}
-                    className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm leading-6 text-[#071827] outline-none transition focus:border-[#006cb5] focus:bg-white focus:ring-2 focus:ring-[#006cb5]/10"
+                    readOnly
+                    aria-readonly="true"
+                    className="w-full resize-none rounded-xl border border-slate-200 bg-slate-100 px-4 py-3.5 text-sm leading-6 text-[#071827] outline-none"
                   />
                 </div>
 

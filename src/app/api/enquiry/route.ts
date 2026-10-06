@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { resolveTrustedPlanPrice } from "@/data/trustedPlanPricing";
 
 /**
  * Escape user-provided values before putting them into HTML email.
@@ -62,15 +63,38 @@ export async function POST(request: NextRequest) {
 
     const name = cleanValue(body.name);
     const company = cleanValue(body.company);
+    const address = cleanValue(body.address);
     const domain = cleanValue(body.domain);
     const phone = cleanValue(body.phone);
     const email = cleanValue(body.email);
-    const message = cleanValue(body.message);
-
     const service = cleanValue(body.service);
     const plan = cleanValue(body.plan);
-    const price = cleanValue(body.price);
-    const billing = cleanValue(body.billing);
+    const requestedBilling = cleanValue(body.billing);
+    const isDomainRegistration = service === "Domain Registration";
+    const trustedPrice = isDomainRegistration
+      ? ""
+      : resolveTrustedPlanPrice(service, plan, requestedBilling);
+
+    if (!isDomainRegistration && trustedPrice === null) {
+      return NextResponse.json(
+        { success: false, message: "Selected plan or billing option is invalid." },
+        { status: 400 }
+      );
+    }
+
+    if (isDomainRegistration && (!domain || plan !== domain)) {
+      return NextResponse.json(
+        { success: false, message: "Selected domain is invalid." },
+        { status: 400 }
+      );
+    }
+
+    const price = trustedPrice || "";
+    const billing = isDomainRegistration ? "Domain registration" : requestedBilling;
+    // Never trust the message sent by the browser; construct it from validated fields.
+    const message = isDomainRegistration
+      ? `Customer requested registration for ${domain}.`
+      : `Customer enquiry for ${service} ${plan} at ${price} (${billing}).`;
 
     const features = Array.isArray(body.features)
       ? body.features
@@ -148,6 +172,7 @@ export async function POST(request: NextRequest) {
     // --------------------------------
     const safeName = escapeHtml(name);
     const safeCompany = escapeHtml(company);
+    const safeAddress = escapeHtml(address);
     const safeDomain = escapeHtml(domain);
     const safePhone = escapeHtml(phone);
     const safeEmail = escapeHtml(email);
@@ -603,6 +628,30 @@ export async function POST(request: NextRequest) {
                     font-weight:500;
                   ">
                     ${safeCompany || "-"}
+                  </td>
+                </tr>
+
+                <!-- Address -->
+                <tr>
+                  <td style="
+                    padding:12px 14px;
+                    background:#f7fafc;
+                    border-bottom:1px solid #e2e8f0;
+                    color:#64748b;
+                    font-size:13px;
+                    font-weight:700;
+                  ">
+                    Address
+                  </td>
+
+                  <td style="
+                    padding:12px 14px;
+                    border-bottom:1px solid #e2e8f0;
+                    color:#334155;
+                    font-size:14px;
+                    font-weight:500;
+                  ">
+                    ${safeAddress || "-"}
                   </td>
                 </tr>
 
