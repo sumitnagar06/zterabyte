@@ -826,12 +826,72 @@ export async function POST(request: NextRequest) {
       `,
     });
 
+    // Send the customer a copy of the submitted enquiry and selected plan.
+    let customerConfirmationSent = false;
+    try {
+      await transporter.sendMail({
+        from: `"ZTERABYTE" <${process.env.SMTP_USER}>`,
+        to: email,
+        replyTo: process.env.ENQUIRY_TO_EMAIL,
+        subject: "We received your ZTERABYTE enquiry",
+        text: `Hi ${name},
+
+Thank you for contacting ZTERABYTE. We have received your enquiry and our team will get in touch with you.
+
+Order details
+Service: ${service}
+Plan: ${plan}
+Price: ${price || "To be confirmed"}
+Billing: ${billing}
+${features.length ? `Selected details:\n${features.map((feature: string) => `- ${feature}`).join("\n")}\n` : ""}
+Your details
+Name: ${name}
+Company: ${company || "Not provided"}
+Address: ${address || "Not provided"}
+Email: ${email}
+Phone: ${phone}
+Domain: ${domain || "Not provided"}
+
+Your message:
+${message}
+
+Regards,
+ZTERABYTE Team`,
+        html: `<!DOCTYPE html>
+<html><body style="margin:0;padding:24px;background:#f3f6f9;font-family:Arial,Helvetica,sans-serif;color:#071827">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden">
+    <tr><td style="padding:24px 30px;background:#071827;color:#fff"><div style="font-size:24px;font-weight:800;color:#53a6ff">ZTERABYTE</div><div style="margin-top:6px;font-size:13px;color:#cbd5e1">Enquiry confirmation</div></td></tr>
+    <tr><td style="padding:28px 30px"><h1 style="margin:0 0 12px;font-size:22px">Thank you, ${safeName}!</h1><p style="margin:0 0 22px;color:#475569;line-height:1.6">We have received your enquiry. Our team will review the details and get in touch with you.</p>
+      <h2 style="font-size:17px">Selected service</h2>
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+        <tr><td style="padding:10px;background:#f7fafc;border-bottom:1px solid #e2e8f0">Service</td><td style="padding:10px;border-bottom:1px solid #e2e8f0">${safeService || "-"}</td></tr>
+        <tr><td style="padding:10px;background:#f7fafc;border-bottom:1px solid #e2e8f0">Plan / Domain</td><td style="padding:10px;border-bottom:1px solid #e2e8f0">${safePlan || "-"}</td></tr>
+        <tr><td style="padding:10px;background:#f7fafc;border-bottom:1px solid #e2e8f0">Price</td><td style="padding:10px;border-bottom:1px solid #e2e8f0">${safePrice || "To be confirmed"}</td></tr>
+        <tr><td style="padding:10px;background:#f7fafc">Billing</td><td style="padding:10px">${safeBilling || "-"}</td></tr>
+      </table>
+      ${features.length ? `<h2 style="margin:24px 0 8px;font-size:17px">Selected details</h2><ul style="margin:0;padding-left:20px;color:#475569;line-height:1.7">${features.map((feature: string) => `<li>${escapeHtml(feature)}</li>`).join("")}</ul>` : ""}
+      <h2 style="margin:24px 0 8px;font-size:17px">Your submitted details</h2>
+      <p style="margin:0;color:#475569;line-height:1.7"><strong>Name:</strong> ${safeName}<br/><strong>Company:</strong> ${safeCompany || "Not provided"}<br/><strong>Address:</strong> ${safeAddress || "Not provided"}<br/><strong>Email:</strong> ${safeEmail}<br/><strong>Phone:</strong> ${safePhone}<br/><strong>Domain:</strong> ${safeDomain || "Not provided"}</p>
+      <h2 style="margin:24px 0 8px;font-size:17px">Message</h2><p style="margin:0;padding:14px;background:#f7fafc;border-left:3px solid #006cb5;color:#475569;line-height:1.7;white-space:pre-wrap">${safeMessage}</p>
+      <p style="margin:24px 0 0;color:#475569;line-height:1.6">Regards,<br/><strong>ZTERABYTE Team</strong></p>
+    </td></tr>
+  </table>
+</body></html>`,
+      });
+      customerConfirmationSent = true;
+    } catch (customerEmailError) {
+      // The business has already received the enquiry; don't ask the customer
+      // to resubmit and risk creating a duplicate if only confirmation failed.
+      console.error("Customer enquiry confirmation email failed:", customerEmailError);
+    }
+
     // --------------------------------
     // Success
     // --------------------------------
     return NextResponse.json({
       success: true,
       message: "Enquiry sent successfully.",
+      customerConfirmationSent,
     });
   } catch (error) {
     console.error("Enquiry email error:", error);

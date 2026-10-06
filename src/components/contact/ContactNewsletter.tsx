@@ -1,3 +1,6 @@
+"use client";
+
+import { FormEvent, useState } from "react";
 import {
   FiArrowRight,
   FiCheckCircle,
@@ -11,6 +14,34 @@ const benefits = [
 ];
 
 export default function ContactNewsletter() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setStatus("");
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Unable to subscribe right now.");
+      }
+      setStatus("Thanks for subscribing. You are on our newsletter list.");
+      setEmail("");
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : "Unable to subscribe right now. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <section className="overflow-hidden bg-[#f6fafd] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-6">
@@ -34,7 +65,7 @@ export default function ContactNewsletter() {
               <h2 className="mt-6 text-3xl font-black leading-tight text-white sm:text-4xl">
                 Stay Connected With
                 <span className="block text-[#38a9f5]">
-                  Zterabyte
+                  ZTERABYTE
                 </span>
               </h2>
 
@@ -72,7 +103,7 @@ export default function ContactNewsletter() {
                 information from our team.
               </p>
 
-              <form className="mt-6">
+              <form className="mt-6" onSubmit={handleSubmit}>
 
                 <label
                   htmlFor="newsletter-email"
@@ -88,15 +119,19 @@ export default function ContactNewsletter() {
                     name="email"
                     type="email"
                     required
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    autoComplete="email"
                     placeholder="Enter your email address"
                     className="min-w-0 flex-1 rounded-xl border border-white/10 bg-white/10 px-4 py-3.5 text-sm text-white outline-none placeholder:text-slate-500 focus:border-[#38a9f5] focus:ring-2 focus:ring-[#38a9f5]/20"
                   />
 
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#006cb5] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0086dc]"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#006cb5] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#0086dc] disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    Subscribe
+                    {isSubmitting ? "Subscribing..." : "Subscribe"}
                     <FiArrowRight />
                   </button>
 
@@ -106,6 +141,12 @@ export default function ContactNewsletter() {
                   By subscribing, you agree to receive updates from
                   Zterabyte.
                 </p>
+
+                {status && (
+                  <p role="status" aria-live="polite" className="mt-3 text-sm text-slate-200">
+                    {status}
+                  </p>
+                )}
 
               </form>
 
