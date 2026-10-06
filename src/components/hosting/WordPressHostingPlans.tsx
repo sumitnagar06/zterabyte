@@ -397,6 +397,10 @@ export default function WordPressHostingPlans() {
             );
           })}
         </div>
+        {/* Note */}
+        <p className="mt-8 text-xs text-slate-400 font-bold">
+          * All hosting plan prices shown are inclusive of 18% GST.
+        </p>
       </div>
     </section>
   );
