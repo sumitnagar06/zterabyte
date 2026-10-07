@@ -19,8 +19,8 @@ export const navigation = [
             href: "/hosting/limited-shared-hosting",
           },
           {
-            title: "Unlimited Shared Hosting",
-            href: "/hosting/unlimited-shared-hosting",
+            title: "Linux Shared Hosting",
+            href: "/hosting/linux-shared-hosting",
           },
           {
             title: "WordPress Hosting",

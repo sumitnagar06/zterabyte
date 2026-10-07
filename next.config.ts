@@ -17,7 +17,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/hosting/unlimited",
-        destination: "/hosting/unlimited-shared-hosting",
+        destination: "/hosting/linux-shared-hosting",
+        permanent: true,
+      },
+      {
+        source: "/hosting/unlimited-shared-hosting",
+        destination: "/hosting/linux-shared-hosting",
         permanent: true,
       },
       {

@@ -7,9 +7,9 @@ export const hostingFAQ: FAQItem[] = [
       "Shared hosting is a hosting service where multiple websites use resources on the same hosting server. It is a cost-effective solution for personal websites, small businesses and growing websites.",
   },
   {
-    question: "What is the difference between Limited and Unlimited Shared Hosting?",
+    question: "What is the difference between Limited and Linux Shared Hosting?",
     answer:
-      "Limited Shared Hosting comes with defined website, storage or resource limits, while Unlimited Shared Hosting is designed to provide greater flexibility for businesses that need to host multiple websites and require more resources.",
+      "Limited Shared Hosting comes with defined website, storage or resource limits, while Linux Shared Hosting is designed to provide greater flexibility for businesses that need to host multiple websites and require more resources.",
   },
   {
     question: "Do hosting plans include SSL?",

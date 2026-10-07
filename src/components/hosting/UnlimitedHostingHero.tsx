@@ -36,7 +36,7 @@ export default function UnlimitedHostingHero() {
 
             <span className="inline-flex items-center gap-2 rounded-full border border-[#38a9f5]/20 bg-[#006cb5]/10 px-4 py-2 text-sm font-semibold text-[#70c8fa]">
               <FiGlobe />
-              Unlimited Shared Hosting
+              Linux Shared Hosting
             </span>
 
             <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -115,7 +115,7 @@ export default function UnlimitedHostingHero() {
                       </p>
 
                       <h2 className="mt-1 text-lg font-bold text-white">
-                        Unlimited Hosting
+                        Linux Shared Hosting
                       </h2>
 
                     </div>

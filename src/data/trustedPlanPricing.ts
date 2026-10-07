@@ -51,7 +51,7 @@ export function resolveTrustedPlanPrice(service: string, plan: string, billing: 
   if (service === "Limited Shared Hosting") {
     pair = limited[plan];
     suffix = "/Year";
-  } else if (service.startsWith("Unlimited Shared Hosting - ")) {
+  } else if (service.startsWith("Linux Shared Hosting - ")) {
     const region = service.endsWith("- India") ? "India" : service.endsWith("- US") ? "US" : "";
     pair = unlimited[region]?.[plan];
     suffix = "/year";

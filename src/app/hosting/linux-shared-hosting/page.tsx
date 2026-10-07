@@ -7,10 +7,10 @@ import FAQ from "@/components/common/FAQ";
 import { hostingFAQ } from "@/components/common/hostingFAQ";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/hosting/unlimited-shared-hosting' },
-  title: "Unlimited Web Hosting Services in Kota | Fast & Reliable Hosting - ZTERABYTE",
+  alternates: { canonical: '/hosting/linux-shared-hosting' },
+  title: "Linux Shared Hosting Services in Kota | Fast & Reliable Hosting - ZTERABYTE",
   description:
-    "Get reliable Unlimited web hosting services with fast performance, SSL, business email and flexible hosting plans for your website from ZTERABYTE.",
+    "Get reliable Linux shared hosting with fast performance, SSL, business email and flexible hosting plans for your website from ZTERABYTE.",
 };
 
 const unlimitedHostingStats = [
@@ -47,7 +47,7 @@ export default function UnlimitedHostingPage() {
       {/* Hero */}
       <UnlimitedHostingHero />
 
-      {/* Unlimited Hosting Plans */}
+      {/* Linux Shared Hosting Plans */}
       <UnlimitedHostingPlans />
 
       {/* Linux Shared Hosting Features */}
@@ -61,8 +61,8 @@ export default function UnlimitedHostingPage() {
 
       {/* FAQ */}
       <FAQ
-        title="Unlimited Shared Hosting FAQs"
-        description="Find answers to common questions about our unlimited shared hosting service."
+        title="Linux Shared Hosting FAQs"
+        description="Find answers to common questions about our Linux shared hosting service."
         items={hostingFAQ}
       />
 

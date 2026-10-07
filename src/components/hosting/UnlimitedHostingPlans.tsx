@@ -325,11 +325,11 @@ export default function UnlimitedHostingPlans() {
         {/* Section Heading */}
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex rounded-full bg-[#eaf6ff] px-4 py-2 text-sm font-semibold text-[#006cb5]">
-            Unlimited Shared Hosting
+            Linux Shared Hosting
           </span>
 
           <h1 className="mt-5 text-3xl font-bold tracking-tight text-[#071827] sm:text-4xl lg:text-5xl">
-            Unlimited Hosting for
+            Linux Shared Hosting for
             <span className="block text-[#006cb5]">
               Growing Businesses
             </span>
@@ -490,7 +490,7 @@ export default function UnlimitedHostingPlans() {
 
                 {/* Enquiry Button */}
                 <PlanEnquiryModal
-                  service={`Unlimited Shared Hosting - ${
+                  service={`Linux Shared Hosting - ${
                     region === "india" ? "India" : "US"
                   }`}
                   plan={plan.name}

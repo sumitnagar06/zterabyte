@@ -31,7 +31,7 @@ const serviceGroups = [
       "Reliable hosting solutions for websites and businesses with different hosting requirements.",
     items: [
       "Limited Shared Hosting",
-      "Unlimited Shared Hosting",
+      "Linux Shared Hosting",
       "Hosting Management",
     ],
     href: "/hosting",

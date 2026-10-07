@@ -29,7 +29,7 @@ const plans = [
   },
 
   {
-    name: "Unlimited Shared Hosting",
+    name: "Linux Shared Hosting",
     description:
       "A powerful hosting solution for growing businesses, websites and online projects that need more resources.",
     icon: FiServer,
@@ -44,7 +44,7 @@ const plans = [
       "Technical Assistance",
     ],
 
-    href: "/hosting/unlimited-shared-hosting",
+    href: "/hosting/linux-shared-hosting",
   },
 ];
 

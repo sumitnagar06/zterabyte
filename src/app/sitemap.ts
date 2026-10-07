@@ -91,7 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     {
-      url: `${baseUrl}/hosting/unlimited-shared-hosting`,
+      url: `${baseUrl}/hosting/linux-shared-hosting`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
