@@ -54,6 +54,7 @@ import Script from "next/script";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import NavigationProgress from "@/components/layout/NavigationProgress";
 import WhatsAppChat from "@/components/common/WhatsAppChat";
 import TawkChat from "@/components/TawkChat/TawkChat";
 
@@ -100,6 +101,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body>
+        <NavigationProgress />
+
         {/* Google Tag Manager */}
         {GTM_ID && (
           <>
